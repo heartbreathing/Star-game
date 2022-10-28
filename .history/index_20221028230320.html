@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function star() {
+        let timer = setInterval(function () {
+          var obj = document.createElement('img');
+          var wid = Math.floor(Math.random() * 50 + 20);
+          obj.width = wid;
+          var x = Math.floor(Math.random() * 1000 + 50);
+          var y = Math.floor(Math.random() * 500 + 50);
+          obj.style.position = 'absolute';
+          obj.style.top = y + 'px';
+          obj.style.left = x + 'px';
+          obj.src = 'image/star.jpg';
+          
+          document.body.appendChild(obj);
+          obj.addEventListener('click', function () {
+            this.parentNode.removeChild(this);
+          });
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
